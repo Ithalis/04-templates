@@ -18,9 +18,27 @@
         - Insert placeholder keys.
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
+    <script id="article-template" type="text/x-handlebars-template">
+
+    <article data-category="{{category}}" data-author="{{author}}">
+      <header>
+      <h1>{{title}}</h1>
+      <div class="byline">
+        By <address><a href="{{authorUrl}}">{{author}}</a></address>
+        published <time pubdate datetime="{{publishedOn}}">{{daysAgo}} days ago</time>
+      </div>
+      <section class="article-body">
+        {{{body}}}
+      </section>
+      <a href="#" class="read-on">Read on &rarr;</a>
+    </header>
+
+      <hr>
+      </article>
+    </script>
 
   </head>
-  
+
   <body>
     <header class="site-header clearfix">
       <section class="heading-group-h1">
@@ -76,7 +94,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- TODO: Include Handlebars.JS from a CDN -->
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
